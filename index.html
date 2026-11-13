@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Free Frequency · Realidad aumentada</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; height: 100%; overflow: hidden; background: #14303a; font-family: Montserrat, system-ui, sans-serif; }
+    #scene-container { position: fixed; inset: 0; }
+    #scene-container canvas { display: block; touch-action: none; }
+    #ff-loading { position: fixed; inset: 0; display: grid; place-items: center; z-index: 10; text-align: center; color: #fff; transition: opacity .6s;
+      background: linear-gradient(180deg, #0f2e38 0%, #1f4f5a 34%, #8f8b6c 62%, #f0b27a 82%, #f8d89e 100%); }
+    #ff-loading h1 { margin: 0; font-weight: 700; font-size: clamp(2.6rem, 8vw, 5.5rem); letter-spacing: -.02em; }
+    #ff-loading h1 em { color: #f5b335; }
+    #ff-loading p { font-weight: 600; font-style: italic; }
+    /* botones para entrar al Quest (como los de la página: píldora crema y amarilla) */
+    #ff-xr { position: fixed; right: 16px; bottom: 16px; z-index: 5; display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+    #ff-xr button { font: 700 15px Montserrat, system-ui, sans-serif; border: 0; border-radius: 999px; padding: 12px 20px; cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25); color: #23251f; background: #f6ecd6; }
+    #ff-xr button.ar { background: #f5b335; }
+    #ff-xr button:hover { transform: translateY(-2px); }
+    #ff-xr button[hidden], #ff-xr span[hidden] { display: none; }
+    #ff-xr span { color: #fff; font: 600 13px Montserrat, system-ui, sans-serif; background: rgba(10,24,32,.78); border-radius: 14px; padding: 10px 14px; max-width: 320px; }
+    #ff-hint { position: fixed; left: 16px; bottom: 16px; z-index: 5; max-width: 340px; color: #fff; font: 600 12.5px/1.45 Montserrat, system-ui, sans-serif;
+      background: rgba(10,24,32,.72); border-radius: 14px; padding: 10px 14px; }
+  </style>
+  <script type="module" crossorigin src="./assets/index-DnX3l2hQ.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/light-system-2gh-8yyl.js">
+</head>
+<body>
+  <div id="ff-loading"><div><h1>Free <em>Frequency</em></h1><p>Cargando la experiencia de realidad aumentada…</p></div></div>
+  <div id="scene-container"></div>
+  <div id="ff-xr">
+    <button type="button" class="ar" id="btn-ar" hidden>Entrar en realidad aumentada (AR)</button>
+    <span id="no-ar" hidden>Este navegador no admite realidad aumentada: ábrelo en el navegador del Meta Quest.</span>
+  </div>
+  <div id="ff-hint">Vista previa en el computador (mesa virtual): arrastra para mirar · clic para elegir · rueda o + / − para acercar.<br>
+    En el Meta Quest: deja los controles, toca «Entrar en realidad aumentada», mira hacia una mesa y <b>pellizca</b> (pulgar + índice) para colocar la experiencia sobre ella. Los botones se tocan con la punta del índice.</div>
+</body>
+</html>
